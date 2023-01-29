@@ -4,6 +4,8 @@ function createCanvas(size) {
         const pixel = document.createElement("div");
         pixel.setAttribute("class", "pixel");
         canvas.appendChild(pixel);
+        pixel.addEventListener("mouseover", () => 
+        pixel.setAttribute("style", "background-color: black;"));
     }
     canvas.setAttribute("style",
     `grid-template-columns: repeat(${size}, 1fr);
