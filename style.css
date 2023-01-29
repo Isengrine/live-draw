@@ -14,9 +14,11 @@ html,body {
     height: 512px;
     width: 512px;
     border: solid 1px;
+    display: grid;
 }
 
 .pixel {
+    border: solid 1px;
     background-color: aqua;
 }
 

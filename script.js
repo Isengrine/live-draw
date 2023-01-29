@@ -1,10 +1,13 @@
 function createCanvas(size) {
-    console.log("canvas created");
-    for (let i = 0; i < size; i++) {
+    area = size * size;
+    for (let i = 0; i < area; i++) {
         const pixel = document.createElement("div");
         pixel.setAttribute("class", "pixel");
         canvas.appendChild(pixel);
     }
+    canvas.setAttribute("style",
+    `grid-template-columns: repeat(${size}, 1fr);
+    grid-template-rows: repeat(${size}, 1fr)`);
 }
 
 let canvas = document.getElementById("canvas");
