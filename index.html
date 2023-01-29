@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <title>Live Draw</title>
 </head>
 <body>
@@ -20,8 +20,8 @@
             <button>Fill</button>
             <button>Eraser</button>
             <div class="slider">
-                <p>Select size: <span id="size"></span></p>
-                <input type="range" min="8" max="64" value="16" id="range">
+                <p>Select size: <span id="value"></span></p>
+                <input type="range" min="8" max="64" value="16" id="slider">
             </div>
         </div>
         <div class="canvas">
