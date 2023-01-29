@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="">
+    <script src="./script.js"></script>
+    <title>Live Draw</title>
 </head>
 <body>
-    
+    <div class="header">
+        <h1>Live Draw</h1>
+    </div>
+    <div class="content">
+        <div class="menu">
+            <button>Color</button>
+            <button>Rainbow</button>
+            <button>Fill</button>
+            <button>Eraser</button>
+            <div class="slider">
+                <p>Select size: <span id="size"></span></p>
+                <input type="range" min="8" max="64" value="16" id="range">
+            </div>
+        </div>
+        <div class="canvas">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Made by Isengrine</p>
+    </div>
 </body>
 </html>

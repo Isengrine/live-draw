@@ -1,0 +1,13 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
