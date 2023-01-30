@@ -14,12 +14,12 @@ function createCanvas(size) {
 function draw(pixel) {
     pixel.addEventListener("mousedown", () => {
         pixel.setAttribute("style", `background-color: ${color.value};`);
-        pixel.classList.toggle("modified");
+        pixel.classList.add("modified");
     })
     pixel.addEventListener("mouseover", (event) => {
         if (event.buttons == 1) {
             pixel.setAttribute("style", `background-color: ${color.value};`);
-            pixel.classList.toggle("modified");
+            pixel.classList.add("modified");
         }});
     pixel.ondragstart = () => {
         return false;
@@ -37,6 +37,7 @@ let canvas = document.getElementById("canvas");
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
 let color = document.getElementById("color");
+let bgcolor = document.getElementById("bgcolor");
 let clear = document.getElementById("clearbtn");
 let grid = document.getElementById("gridbtn");
 let size = slider.value;
@@ -55,6 +56,12 @@ grid.addEventListener("click", () => {
         pixel.classList.toggle("border");
     });
 })
+
+bgcolor.oninput = () => {
+    const pixels = document.querySelectorAll(".pixel:not(.modified)");
+    pixels.forEach(pixel => {
+        pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
+})}
 
 slider.oninput = () => {
     value.textContent = slider.value;
