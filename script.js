@@ -13,11 +13,11 @@ function createCanvas(size) {
 
 function draw(pixel) {
     pixel.addEventListener("mousedown", () => {
-        pixel.setAttribute("style", "background-color: black;");
+        pixel.setAttribute("style", `background-color: ${color.value};`);
     })
     pixel.addEventListener("mouseover", (event) => {
         if (event.buttons == 1) {
-            pixel.setAttribute("style", "background-color: black;");
+            pixel.setAttribute("style", `background-color: ${color.value};`);
         }});
 }
 
@@ -31,6 +31,7 @@ function removePixels() {
 let canvas = document.getElementById("canvas");
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
+let color = document.getElementById("color");
 let clear = document.getElementById("clearbtn");
 let size = slider.value;
 value.textContent = slider.value;
