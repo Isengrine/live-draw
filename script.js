@@ -33,6 +33,12 @@ function removePixels() {
     });
 }
 
+function changeBG() {
+    const pixels = document.querySelectorAll(".pixel:not(.modified)");
+    pixels.forEach(pixel => {
+        pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
+})}
+
 let canvas = document.getElementById("canvas");
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
@@ -48,6 +54,7 @@ window.onload = createCanvas(size);
 clear.addEventListener("click", () => {
     removePixels();
     createCanvas(size);
+    changeBG();
 })
 
 grid.addEventListener("click", () => {
@@ -58,10 +65,8 @@ grid.addEventListener("click", () => {
 })
 
 bgcolor.oninput = () => {
-    const pixels = document.querySelectorAll(".pixel:not(.modified)");
-    pixels.forEach(pixel => {
-        pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
-})}
+    changeBG();
+}
 
 slider.oninput = () => {
     value.textContent = slider.value;
