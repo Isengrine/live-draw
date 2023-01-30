@@ -14,11 +14,16 @@ function createCanvas(size) {
 function draw(pixel) {
     pixel.addEventListener("mousedown", () => {
         pixel.setAttribute("style", `background-color: ${color.value};`);
+        pixel.classList.toggle("modified");
     })
     pixel.addEventListener("mouseover", (event) => {
         if (event.buttons == 1) {
             pixel.setAttribute("style", `background-color: ${color.value};`);
+            pixel.classList.toggle("modified");
         }});
+    pixel.ondragstart = () => {
+        return false;
+      };
 }
 
 function removePixels() {
@@ -45,7 +50,6 @@ clear.addEventListener("click", () => {
 })
 
 grid.addEventListener("click", () => {
-    console.log("Testy test")
     const pixels = document.querySelectorAll(".pixel");
     pixels.forEach(pixel => {
         pixel.classList.toggle("border");
