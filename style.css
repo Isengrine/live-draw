@@ -17,9 +17,8 @@ html,body {
     display: grid;
 }
 
-.pixel {
+.border {
     border: solid 1px;
-    background-color: white;
 }
 
 .menu {

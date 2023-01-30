@@ -33,6 +33,7 @@ let value = document.getElementById("value");
 let slider = document.getElementById("slider");
 let color = document.getElementById("color");
 let clear = document.getElementById("clearbtn");
+let grid = document.getElementById("gridbtn");
 let size = slider.value;
 value.textContent = slider.value;
 
@@ -41,6 +42,14 @@ window.onload = createCanvas(size);
 clear.addEventListener("click", () => {
     removePixels();
     createCanvas(size);
+})
+
+grid.addEventListener("click", () => {
+    console.log("Testy test")
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => {
+        pixel.classList.toggle("border");
+    });
 })
 
 slider.oninput = () => {
