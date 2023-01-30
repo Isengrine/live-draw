@@ -12,6 +12,13 @@ function createCanvas(size) {
     grid-template-rows: repeat(${size}, 1fr)`);
 }
 
+function removePixels() {
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => {
+        pixel.remove();
+    });
+}
+
 let canvas = document.getElementById("canvas");
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
@@ -22,4 +29,7 @@ window.onload = createCanvas(size);
 
 slider.oninput = () => {
     value.textContent = slider.value;
+    size = slider.value;
+    removePixels();
+    createCanvas(size);
 }
