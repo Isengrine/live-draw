@@ -4,12 +4,21 @@ function createCanvas(size) {
         const pixel = document.createElement("div");
         pixel.setAttribute("class", "pixel");
         canvas.appendChild(pixel);
-        pixel.addEventListener("mouseover", () => 
-        pixel.setAttribute("style", "background-color: black;"));
+        draw(pixel);
     }
     canvas.setAttribute("style",
     `grid-template-columns: repeat(${size}, 1fr);
     grid-template-rows: repeat(${size}, 1fr)`);
+}
+
+function draw(pixel) {
+    pixel.addEventListener("mousedown", () => {
+        pixel.setAttribute("style", "background-color: black;");
+    })
+    pixel.addEventListener("mouseover", (event) => {
+        if (event.buttons == 1) {
+            pixel.setAttribute("style", "background-color: black;");
+        }});
 }
 
 function removePixels() {
