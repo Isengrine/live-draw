@@ -1,29 +1,49 @@
 function createCanvas(size) {
-    area = size * size;
+    let area = size * size;
     for (let i = 0; i < area; i++) {
         const pixel = document.createElement("div");
         pixel.setAttribute("class", "pixel");
         canvas.appendChild(pixel);
-        draw(pixel);
+        pixels.push(pixel);
     }
     canvas.setAttribute("style",
     `grid-template-columns: repeat(${size}, 1fr);
-    grid-template-rows: repeat(${size}, 1fr)`);
+    grid-template-rows: repeat(${size}, 1fr);`);
+    return pixels;
 }
 
-function draw(pixel) {
-    pixel.ondragstart = () => {
-        return false;
-      };
-    pixel.addEventListener("mousedown", () => {
-        pixel.setAttribute("style", `background-color: ${color.value};`);
-        pixel.classList.add("modified");
-    })
-    pixel.addEventListener("mouseover", (event) => {
-        if (event.buttons == 1) {
-            pixel.setAttribute("style", `background-color: ${color.value};`);
-            pixel.classList.add("modified");
-        }});
+function draw() {
+    for (const pixel of pixels) {
+        pixel.ondragstart = () => {
+            return false;
+            };
+
+        if (pencil) {
+            pixel.addEventListener("mousedown", () => {
+                pixel.setAttribute("style", `background-color: ${color.value};`);
+                pixel.classList.add("modified");
+            })
+            pixel.addEventListener("mouseover", (event) => {
+                if (event.buttons == 1) {
+                    pixel.setAttribute("style", `background-color: ${color.value};`);
+                    pixel.classList.add("modified");
+                }
+            });
+        }
+
+        else if (eraser) {
+            pixel.addEventListener("mousedown", () => {
+                pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
+                pixel.classList.remove("modified");
+            })
+            pixel.addEventListener("mouseover", (event) => {
+                if (event.buttons == 1) {
+                    pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
+                    pixel.classList.remove("modified");
+                }
+            });
+        }
+    }
 }
 
 function removePixels() {
@@ -37,7 +57,8 @@ function changeBG() {
     const pixels = document.querySelectorAll(".pixel:not(.modified)");
     pixels.forEach(pixel => {
         pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
-})}
+    })
+}
 
 function downloadImg() {
     html2canvas(document.getElementById("canvas")).then(function(canvas) {
@@ -49,25 +70,46 @@ function downloadImg() {
 }
 
 let canvas = document.getElementById("canvas");
+let pixels = [];
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
 let color = document.getElementById("color");
 let bgcolor = document.getElementById("bgcolor");
-let erase = document.getElementById("eraserbtn");
-let clear = document.getElementById("clearbtn");
-let grid = document.getElementById("gridbtn");
+
+let pencilbtn = document.getElementById("pencilbtn");
+let highlightbtn = document.getElementById("highlighterbtn");
+let pickbtn = document.getElementById("pickerbtn");
+let fillbtn = document.getElementById("fillbtn");
+let eraserbtn = document.getElementById("eraserbtn");
+let clearbtn = document.getElementById("clearbtn");
+let gridbtn = document.getElementById("gridbtn");
 let size = slider.value;
 value.textContent = slider.value;
 
+let pencil = false;
+let eraser = false;
+
 window.onload = createCanvas(size);
 
-clear.addEventListener("click", () => {
+pencilbtn.addEventListener("click", () => {
+    pencil = true;
+    eraser = false;
+    draw(pixels);
+})
+
+eraserbtn.addEventListener("click", () => {
+    pencil = false;
+    eraser = true;
+    draw(pixels);
+})
+
+clearbtn.addEventListener("click", () => {
     removePixels();
     createCanvas(size);
     changeBG();
 })
 
-grid.addEventListener("click", () => {
+gridbtn.addEventListener("click", () => {
     const pixels = document.querySelectorAll(".pixel");
     pixels.forEach(pixel => {
         pixel.classList.toggle("border");
