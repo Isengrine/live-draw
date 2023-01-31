@@ -16,18 +16,21 @@
     </div>
     <div class="content">
         <div class="menu">
+
+            <button id="pencilbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
+            <button id="highlighterbtn" title="Highlighter"><img src="./images/highlighter_ico.png"></button>
+            <button id="pickerbtn" title="Picker"><img src="./images/picker_ico.png"></button>
+            <button id="fillbtn" title="Fill"><img src="./images/fill_ico.png"></button>
+            <button id="eraserbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
+            <button id="clearbtn" title="Clear"><img src="./images/clear_ico.png"></button>
+            <button id="gridbtn" title="Grid"><img src="./images/grid_ico.png"></button>
             <input type="color" id="color" value="#171421">
             <input type="color" id="bgcolor" value="#ffffff">
-            <button id="pickerbtn"><img src="./images/picker_ico.png"></button>
-            <button id="fillbtn"><img src="./images/fill_ico.png"></button>
-            <button id="eraserbtn"><img src="./images/eraser_ico.png"></button>
-            <button id="clearbtn"><img src="./images/clear_ico.png"></button>
-            <button id="gridbtn"><img src="./images/grid_ico.png"></button>
             <div class="slider">
                 <p>Select size: <span id="value"></span></p>
                 <input type="range" min="8" max="64" step="8" value="16" id="slider">
             </div>
-            <button onclick="downloadImg()"><img src="./images/download_ico.png"></button>
+            <button onclick="downloadImg()" title="Snapshot"><img src="./images/download_ico.png"></button>
         </div>
         <div id="canvas">
         </div>

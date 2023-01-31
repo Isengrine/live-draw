@@ -26,7 +26,7 @@ html, body {
 }
 
 .pixel.border {
-    border: solid 1px black;
+    border: solid 1px #9c9c9c;
 }
 
 .menu {
