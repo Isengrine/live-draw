@@ -15,21 +15,21 @@
         <h1>Live Draw</h1>
     </div>
     <div class="content">
-        <div id="canvas">
-        </div>
         <div class="menu">
             <input type="color" id="color" value="#171421">
             <input type="color" id="bgcolor" value="#ffffff">
-            <button id="rainbowbtn">Rainbow</button>
-            <button id="fillbtn">Fill</button>
-            <button id="eraserbtn">Eraser</button>
-            <button id="clearbtn">Clear</button>
-            <button id="gridbtn">Grid</button>
+            <button id="pickerbtn"><img src="./images/picker_ico.png"></button>
+            <button id="fillbtn"><img src="./images/fill_ico.png"></button>
+            <button id="eraserbtn"><img src="./images/eraser_ico.png"></button>
+            <button id="clearbtn"><img src="./images/clear_ico.png"></button>
+            <button id="gridbtn"><img src="./images/grid_ico.png"></button>
             <div class="slider">
                 <p>Select size: <span id="value"></span></p>
                 <input type="range" min="8" max="64" step="8" value="16" id="slider">
             </div>
-            <button onclick="downloadImg()">Download</button>
+            <button onclick="downloadImg()"><img src="./images/download_ico.png"></button>
+        </div>
+        <div id="canvas">
         </div>
     </div>
     <div class="footer">
