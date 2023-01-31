@@ -9,6 +9,11 @@ function createCanvas(size) {
     canvas.setAttribute("style",
     `grid-template-columns: repeat(${size}, 1fr);
     grid-template-rows: repeat(${size}, 1fr);`);
+
+    if (grid) {
+        addGrid();
+    }
+
     return pixels;
 }
 
@@ -53,6 +58,13 @@ function removePixels() {
     });
 }
 
+function addGrid() {
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => {
+        pixel.classList.toggle("border");
+    });
+}
+
 function changeBG() {
     const pixels = document.querySelectorAll(".pixel:not(.modified)");
     pixels.forEach(pixel => {
@@ -61,7 +73,7 @@ function changeBG() {
 }
 
 function downloadImg() {
-    html2canvas(document.getElementById("canvas")).then(function(canvas) {
+    html2canvas(document.getElementById("canvas")).then((canvas) => {
         let link = document.createElement("a");
         link.download = "image.png";
         link.href = canvas.toDataURL("image/png");
@@ -89,6 +101,7 @@ value.textContent = slider.value;
 
 let pencil = true;
 let eraser = false;
+let grid = false;
 
 window.onload = createCanvas(size); draw(pixels);
 
@@ -111,10 +124,8 @@ clearbtn.addEventListener("click", () => {
 })
 
 gridbtn.addEventListener("click", () => {
-    const pixels = document.querySelectorAll(".pixel");
-    pixels.forEach(pixel => {
-        pixel.classList.toggle("border");
-    });
+    grid = !grid;
+    addGrid();
 })
 
 bgcolor.oninput = () => {

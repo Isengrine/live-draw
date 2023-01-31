@@ -31,6 +31,7 @@ html, body {
 }
 
 .menu {
+    min-width: 180px;
     background-color: #171421;
     margin: 8px;
     border-radius: 8px;
@@ -57,6 +58,7 @@ button {
     height: 64px;
     width: 64px;
     margin: 4px;
+    cursor: pointer;
 }
 
 #color, #bgcolor {
