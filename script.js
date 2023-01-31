@@ -40,10 +40,10 @@ function changeBG() {
 })}
 
 function downloadImg() {
-    html2canvas(document.getElementById("canvas"), {imageSmoothingEnabled: false}).then(function(canvas) {
+    html2canvas(document.getElementById("canvas")).then(function(canvas) {
         let link = document.createElement("a");
         link.download = "image.png";
-        link.href = canvas.toDataURL();
+        link.href = canvas.toDataURL("image/png");
         link.click();
     });
 }
