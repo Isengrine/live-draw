@@ -67,6 +67,11 @@ button {
     cursor: pointer;
 }
 
+.snapshot {
+    display: flex;
+    justify-content: center;
+}
+
 .footer {
     background-color: #171421;
 }

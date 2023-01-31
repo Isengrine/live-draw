@@ -87,10 +87,10 @@ let sizebtn = document.getElementById("sizebtn");
 let size = slider.value;
 value.textContent = slider.value;
 
-let pencil = false;
+let pencil = true;
 let eraser = false;
 
-window.onload = createCanvas(size);
+window.onload = createCanvas(size); draw(pixels);
 
 pencilbtn.addEventListener("click", () => {
     pencil = true;
@@ -119,7 +119,6 @@ gridbtn.addEventListener("click", () => {
 
 bgcolor.oninput = () => {
     changeBG();
-    console.log(bgcolor.value);
 }
 
 slider.oninput = () => {
