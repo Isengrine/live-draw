@@ -1,4 +1,10 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat.ttf);
+}
+
 html, body {
+    font-family: Montserrat;
     height: 100%;
     color: #eeeeee;
     background-color: #241f31;
@@ -9,6 +15,8 @@ html, body {
 
 .header {
     background-color: #171421;
+    display: flex;
+    justify-content: center;
 }
 
 .content {
@@ -82,4 +90,6 @@ button {
 
 .footer {
     background-color: #171421;
+    display: flex;
+    justify-content: center;
 }
