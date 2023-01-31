@@ -12,6 +12,9 @@ function createCanvas(size) {
 }
 
 function draw(pixel) {
+    pixel.ondragstart = () => {
+        return false;
+      };
     pixel.addEventListener("mousedown", () => {
         pixel.setAttribute("style", `background-color: ${color.value};`);
         pixel.classList.add("modified");
@@ -21,9 +24,6 @@ function draw(pixel) {
             pixel.setAttribute("style", `background-color: ${color.value};`);
             pixel.classList.add("modified");
         }});
-    pixel.ondragstart = () => {
-        return false;
-      };
 }
 
 function removePixels() {
@@ -44,6 +44,7 @@ let value = document.getElementById("value");
 let slider = document.getElementById("slider");
 let color = document.getElementById("color");
 let bgcolor = document.getElementById("bgcolor");
+let erase = document.getElementById("eraserbtn");
 let clear = document.getElementById("clearbtn");
 let grid = document.getElementById("gridbtn");
 let size = slider.value;
@@ -66,6 +67,7 @@ grid.addEventListener("click", () => {
 
 bgcolor.oninput = () => {
     changeBG();
+    console.log(bgcolor.value);
 }
 
 slider.oninput = () => {
@@ -73,4 +75,5 @@ slider.oninput = () => {
     size = slider.value;
     removePixels();
     createCanvas(size);
+    changeBG();
 }
