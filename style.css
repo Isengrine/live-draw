@@ -12,16 +12,22 @@ html, body {
 }
 
 .content {
-    image-rendering: pixelated;
     display: flex;
     flex: 1;
+}
+
+#easel {
+    height: 512px;
+    width: 512px;
+    margin: 64px;
+    border: solid 1px;
+    display: flex;
+    align-self: center;
 }
 
 #canvas {
     height: 512px;
     width: 512px;
-    margin: 64px;
-    border: solid 1px;
     background-color: #ffffff;
     display: grid;
 }
