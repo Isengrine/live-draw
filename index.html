@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="./script.js" defer></script>
     <title>Live Draw</title>
 </head>
@@ -28,6 +29,7 @@
                 <p>Select size: <span id="value"></span></p>
                 <input type="range" min="8" max="64" step="8" value="16" id="slider">
             </div>
+            <button onclick="downloadImg()">Download</button>
         </div>
     </div>
     <div class="footer">

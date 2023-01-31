@@ -39,6 +39,15 @@ function changeBG() {
         pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
 })}
 
+function downloadImg() {
+    html2canvas(document.getElementById("canvas"), {imageSmoothingEnabled: false}).then(function(canvas) {
+        let link = document.createElement("a");
+        link.download = "image.png";
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+}
+
 let canvas = document.getElementById("canvas");
 let value = document.getElementById("value");
 let slider = document.getElementById("slider");
