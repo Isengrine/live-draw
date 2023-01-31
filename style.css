@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     color: #eeeeee;
     background-color: #241f31;
+    margin: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -31,9 +32,31 @@ html, body {
 
 .menu {
     background-color: #171421;
+    margin: 8px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
+    flex: 0;
+}
 
+.tools {
+    display: flex;
+    flex: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 8px;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+button {
+    height: 64px;
+    width: 64px;
+    margin: 4px;
 }
 
 #color, #bgcolor {

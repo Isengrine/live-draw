@@ -83,6 +83,7 @@ let fillbtn = document.getElementById("fillbtn");
 let eraserbtn = document.getElementById("eraserbtn");
 let clearbtn = document.getElementById("clearbtn");
 let gridbtn = document.getElementById("gridbtn");
+let sizebtn = document.getElementById("sizebtn");
 let size = slider.value;
 value.textContent = slider.value;
 

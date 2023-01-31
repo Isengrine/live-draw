@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="">
+    <link rel="icon" href="./images/tab_ico.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="./script.js" defer></script>
     <title>Live Draw</title>
@@ -16,16 +16,20 @@
     </div>
     <div class="content">
         <div class="menu">
-
-            <button id="pencilbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
-            <button id="highlighterbtn" title="Highlighter"><img src="./images/highlighter_ico.png"></button>
-            <button id="pickerbtn" title="Picker"><img src="./images/picker_ico.png"></button>
-            <button id="fillbtn" title="Fill"><img src="./images/fill_ico.png"></button>
-            <button id="eraserbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
-            <button id="clearbtn" title="Clear"><img src="./images/clear_ico.png"></button>
-            <button id="gridbtn" title="Grid"><img src="./images/grid_ico.png"></button>
-            <input type="color" id="color" value="#171421">
-            <input type="color" id="bgcolor" value="#ffffff">
+            <div class="tools">
+                <button id="pencilbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
+                <button id="highlighterbtn" title="Highlighter"><img src="./images/highlighter_ico.png"></button>
+                <button id="pickerbtn" title="Picker"><img src="./images/picker_ico.png"></button>
+                <button id="fillbtn" title="Fill"><img src="./images/fill_ico.png"></button>
+                <button id="eraserbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
+                <button id="clearbtn" title="Clear"><img src="./images/clear_ico.png"></button>
+                <button id="gridbtn" title="Grid"><img src="./images/grid_ico.png"></button>
+                <button id="sizebtn" title="Size"><img src="./images/size_ico.png"></button>
+            </div>
+            <div class="colors">
+                <input type="color" id="color" value="#171421">
+                <input type="color" id="bgcolor" value="#ffffff">
+            </div>
             <div class="slider">
                 <p>Select size: <span id="value"></span></p>
                 <input type="range" min="8" max="64" step="8" value="16" id="slider">
