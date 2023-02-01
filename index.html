@@ -17,15 +17,15 @@
     <div class="content">
         <div class="menu">
             <div class="tools">
-                <button id="pencilbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
-                <button id="highlighterbtn" title="Highlighter"><img src="./images/highlighter_ico.png"></button>
-                <button id="pickerbtn" title="Picker"><img src="./images/picker_ico.png"></button>
-                <button id="fillbtn" title="Fill"><img src="./images/fill_ico.png"></button>
-                <button id="eraserbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
-                <button id="clearbtn" title="Clear"><img src="./images/clear_ico.png"></button>
-                <button id="gridbtn" title="Grid"><img src="./images/grid_ico.png"></button>
+                <button id="pencilbtn" class="toolbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
+                <button id="highlighterbtn" class="toolbtn" title="Highlighter"><img src="./images/highlighter_ico.png"></button>
+                <button id="pickerbtn" class="toolbtn" title="Picker"><img src="./images/picker_ico.png"></button>
+                <button id="fillbtn" class="toolbtn" title="Fill"><img src="./images/fill_ico.png"></button>
+                <button id="eraserbtn" class="toolbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
+                <button id="clearbtn" class="toolbtn" title="Clear"><img src="./images/clear_ico.png"></button>
+                <button id="gridbtn" class="toolbtn" title="Grid"><img src="./images/grid_ico.png"></button>
                 <div class="dropdown">
-                    <button id="sizebtn" onclick="dropdown()" title="Size"><img src="./images/size_ico.png"></button>
+                    <button id="sizebtn" class="toolbtn" onclick="dropdown()" title="Size"><img src="./images/size_ico.png"></button>
                     <div id="dropdown-content" class="dropdown-content">
                         <a id="8" class="drop-element">8 x 8</a>
                         <a id="16" class="drop-element">16 x 16</a>
@@ -36,11 +36,11 @@
                 </div>
             </div>
             <div class="colors">
-                <input type="color" id="color" value="#171421">
-                <input type="color" id="bgcolor" value="#ffffff">
+                <input type="color" id="color" title="Ink Color" value="#171421">
+                <input type="color" id="bgcolor" title="Canvas Color" value="#ffffff">
             </div>
             <div class="snapshot">
-                <button onclick="downloadImg()" title="Snapshot"><img src="./images/snapshot_ico.png"></button>
+                <button onclick="downloadImg()" class="toolbtn" title="Snapshot"><img src="./images/snapshot_ico.png"></button>
             </div>
         </div>
         <div id="easel">

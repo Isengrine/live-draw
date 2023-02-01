@@ -103,7 +103,18 @@ button {
     height: 64px;
     width: 64px;
     margin: 4px;
+    background-color: #ffffff;
+    border: solid 2px #3B3B3B;
+    border-radius: 8px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #b9b9b9;
+}
+
+button.active {
+    background-color: #9c9c9c;
 }
 
 #color, #bgcolor {

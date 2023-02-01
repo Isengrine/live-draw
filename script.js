@@ -92,6 +92,7 @@ let slider = document.getElementById("slider");
 let color = document.getElementById("color");
 let bgcolor = document.getElementById("bgcolor");
 let sizeElements = document.getElementsByClassName("drop-element");
+let btns = document.querySelectorAll(".toolbtn");
 
 let pencilbtn = document.getElementById("pencilbtn");
 let highlightbtn = document.getElementById("highlighterbtn");
@@ -104,11 +105,25 @@ let sizebtn = document.getElementById("sizebtn");
 
 let size = 16;
 
+let active = false;
 let pencil = true;
 let eraser = false;
 let grid = false;
 
 window.onload = createCanvas(size); draw(pixels);
+
+btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        if (btn.classList.contains("active")) {
+            btn.classList.remove("active");
+        }
+
+        else {
+            btns.forEach(btn => btn.classList.remove("active"));
+            btn.classList.add("active");
+        }
+    })
+});
 
 pencilbtn.addEventListener("click", () => {
     pencil = true;
