@@ -91,6 +91,7 @@ let value = document.getElementById("value");
 let slider = document.getElementById("slider");
 let color = document.getElementById("color");
 let bgcolor = document.getElementById("bgcolor");
+let sizeElements = document.getElementsByClassName("drop-element");
 
 let pencilbtn = document.getElementById("pencilbtn");
 let highlightbtn = document.getElementById("highlighterbtn");
@@ -100,8 +101,8 @@ let eraserbtn = document.getElementById("eraserbtn");
 let clearbtn = document.getElementById("clearbtn");
 let gridbtn = document.getElementById("gridbtn");
 let sizebtn = document.getElementById("sizebtn");
-let size = slider.value;
-value.textContent = slider.value;
+
+let size = 16;
 
 let pencil = true;
 let eraser = false;
@@ -136,10 +137,11 @@ bgcolor.oninput = () => {
     changeBG();
 }
 
-slider.oninput = () => {
-    value.textContent = slider.value;
-    size = slider.value;
-    removePixels();
-    createCanvas(size);
-    changeBG();
+for (let sizeElement of sizeElements) {
+    sizeElement.addEventListener("click", (event) => {
+        size = parseInt(event.target.id);
+        removePixels();
+        createCanvas(size);
+        changeBG();
+    });
 }

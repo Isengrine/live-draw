@@ -27,21 +27,17 @@
                 <div class="dropdown">
                     <button id="sizebtn" onclick="dropdown()" title="Size"><img src="./images/size_ico.png"></button>
                     <div id="dropdown-content" class="dropdown-content">
-                        <p>8 x 8</p>
-                        <p>16 x 16</p>
-                        <p>32 x 32</p>
-                        <p>48 x 48</p>
-                        <p>64 x 64</p>
+                        <a id="8" class="drop-element">8 x 8</a>
+                        <a id="16" class="drop-element">16 x 16</a>
+                        <a id="32" class="drop-element">32 x 32</a>
+                        <a id="48" class="drop-element">48 x 48</a>
+                        <a id="64" class="drop-element">64 x 64</a>
                     </div>
                 </div>
             </div>
             <div class="colors">
                 <input type="color" id="color" value="#171421">
                 <input type="color" id="bgcolor" value="#ffffff">
-            </div>
-            <div class="slider">
-                <p>Select size: <span id="value"></span></p>
-                <input type="range" min="8" max="64" step="8" value="16" id="slider">
             </div>
             <div class="snapshot">
                 <button onclick="downloadImg()" title="Snapshot"><img src="./images/snapshot_ico.png"></button>

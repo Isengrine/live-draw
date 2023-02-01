@@ -84,14 +84,14 @@ html, body {
     z-index: 1;
 }
 
-.dropdown-content p {
+.dropdown-content a {
     padding: 8px 12px;
     text-decoration: none;
     display: block;
     cursor: pointer;
 }
 
-.dropdown p:hover {
+.dropdown a:hover {
     background-color: #514b5f;
 }
 
@@ -115,6 +115,7 @@ button {
 }
 
 .snapshot {
+    margin: 8px;
     display: flex;
     justify-content: center;
 }
