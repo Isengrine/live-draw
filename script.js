@@ -115,8 +115,12 @@ window.onload = createCanvas(size); draw(pixels);
 window.onclick = (event) => {
     if (!event.target.matches(".sizebtn")) {
         let dropdown = document.getElementById("dropdownID");
-        if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
+        if (dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+        }
+        
+        if (sizebtn.classList.contains("active")) {
+            sizebtn.classList.remove("active");
         }
     }
 }
