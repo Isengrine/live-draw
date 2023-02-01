@@ -119,8 +119,15 @@ btns.forEach(btn => {
         }
 
         else {
-            btns.forEach(btn => btn.classList.remove("active"));
-            btn.classList.add("active");
+            btns.forEach(btn => {
+                if (!btn.id.includes("gridbtn")) {
+                    btn.classList.remove("active")
+                  }
+                });
+
+                if (!btn.id.includes("clearbtn")) {
+                    btn.classList.add("active");
+                }
         }
     })
 });
