@@ -24,7 +24,16 @@
                 <button id="eraserbtn" title="Eraser"><img src="./images/eraser_ico.png"></button>
                 <button id="clearbtn" title="Clear"><img src="./images/clear_ico.png"></button>
                 <button id="gridbtn" title="Grid"><img src="./images/grid_ico.png"></button>
-                <button id="sizebtn" title="Size"><img src="./images/size_ico.png"></button>
+                <div class="dropdown">
+                    <button id="sizebtn" onclick="dropdown()" title="Size"><img src="./images/size_ico.png"></button>
+                    <div id="dropdown-content" class="dropdown-content">
+                        <p>8 x 8</p>
+                        <p>16 x 16</p>
+                        <p>32 x 32</p>
+                        <p>48 x 48</p>
+                        <p>64 x 64</p>
+                    </div>
+                </div>
             </div>
             <div class="colors">
                 <input type="color" id="color" value="#171421">

@@ -68,6 +68,37 @@ html, body {
     gap: 12px;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}  
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #241f31;
+    border: solid 1px black;
+    border-radius: 12px;
+    min-width: 120px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.dropdown-content p {
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown p:hover {
+    background-color: #514b5f;
+}
+
+.show {
+    display: block;
+}
+
 button {
     height: 64px;
     width: 64px;

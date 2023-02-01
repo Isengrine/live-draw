@@ -72,6 +72,10 @@ function changeBG() {
     })
 }
 
+function dropdown() {
+    document.getElementById("dropdown-content").classList.toggle("show");
+  }
+
 function downloadImg() {
     html2canvas(document.getElementById("canvas")).then((canvas) => {
         let link = document.createElement("a");
