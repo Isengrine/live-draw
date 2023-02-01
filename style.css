@@ -140,3 +140,7 @@ button.active {
     display: flex;
     justify-content: center;
 }
+
+#github {
+    margin: 8px;
+}
