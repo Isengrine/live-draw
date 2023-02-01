@@ -36,6 +36,13 @@ function draw() {
             });
         }
 
+        else if (picker) {
+            pixel.addEventListener("click", (event) => {
+                let pickedColor = window.getComputedStyle(event.currentTarget).getPropertyValue("background-color");
+                console.log(pickedColor);
+            });
+        }
+
         else if (eraser) {
             pixel.addEventListener("mousedown", () => {
                 pixel.setAttribute("style", `background-color: ${bgcolor.value};`);
@@ -56,6 +63,10 @@ function removePixels() {
     pixels.forEach(pixel => {
         pixel.remove();
     });
+}
+
+function removeListeners() {
+//TODO: Name anonymous functions in draw(), then remove them in here later.
 }
 
 function addGrid() {
@@ -106,9 +117,10 @@ let sizebtn = document.getElementById("sizebtn");
 let size = 16;
 
 let active = false;
-let pencil = true;
+let pencil = false;
 let eraser = false;
 let grid = false;
+let picker = false;
 
 window.onload = createCanvas(size); draw(pixels);
 
@@ -151,8 +163,16 @@ pencilbtn.addEventListener("click", () => {
     draw(pixels);
 })
 
+pickbtn.addEventListener("click", () => {
+    pencil = false;
+    picker = true;
+    eraser = false;
+    draw(pixels);
+})
+
 eraserbtn.addEventListener("click", () => {
     pencil = false;
+    picker = false;
     eraser = true;
     draw(pixels);
 })
