@@ -138,7 +138,7 @@ btns.forEach(btn => {
                   }
                 });
 
-                if (!btn.id.includes("clearbtn")) {
+                if (!btn.id.includes("clearbtn") && !btn.id.includes("snapbtn")) {
                     btn.classList.add("active");
                 }
         }
