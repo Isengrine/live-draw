@@ -37,6 +37,39 @@ function draw() {
             });
         }
 
+        else if (highlighter) {
+            pixel.addEventListener("mousedown", (event) => {
+                let currentOpacity = window.getComputedStyle(event.currentTarget).getPropertyValue("opacity");
+                currentOpacity = parseFloat(currentOpacity);
+
+                if (!pixel.classList.contains("modified") && currentOpacity >= 1) {
+                    pixel.setAttribute("style", `background-color: ${color.value}; opacity: 0.2;`);
+                    pixel.classList.add("modified");
+                }
+
+                else {
+                    pixel.setAttribute("style", `background-color: ${color.value}; opacity: ${currentOpacity + 0.1};`);
+                    pixel.classList.add("modified");
+                }
+            })
+            pixel.addEventListener("mouseover", (event) => {
+                if (event.buttons == 1) {
+                    let currentOpacity = window.getComputedStyle(event.currentTarget).getPropertyValue("opacity");
+                    currentOpacity = parseFloat(currentOpacity);
+    
+                    if (!pixel.classList.contains("modified") && currentOpacity >= 1) {
+                        pixel.setAttribute("style", `background-color: ${color.value}; opacity: 0.2;`);
+                        pixel.classList.add("modified");
+                    }
+    
+                    else {
+                        pixel.setAttribute("style", `background-color: ${color.value}; opacity: ${currentOpacity + 0.1};`);
+                        pixel.classList.add("modified");
+                    }
+                }
+            });
+        }
+
         else if (picker) {
             pixel.addEventListener("click", (event) => {
                 let pickedColor = window.getComputedStyle(event.currentTarget).getPropertyValue("background-color");
@@ -139,12 +172,14 @@ let gridbtn = document.getElementById("gridbtn");
 let sizebtn = document.getElementById("sizebtn");
 
 let size = 16;
+let opacity = 0.1;
 
 let active = false;
 let pencil = false;
 let eraser = false;
 let grid = false;
 let picker = false;
+let highlighter = false;
 
 window.onload = createCanvas(size), changeBG();
 
@@ -183,7 +218,19 @@ btns.forEach(btn => {
 
 pencilbtn.addEventListener("click", () => {
     pencil = true;
+    picker = false;
     eraser = false;
+    highlighter = false;
+    removeListeners();
+    draw();
+})
+
+highlightbtn.addEventListener("click", () => {
+    pencil = false;
+    picker = false;
+    eraser = false;
+    highlighter = true;
+    removeListeners();
     draw();
 })
 
@@ -191,6 +238,7 @@ pickbtn.addEventListener("click", () => {
     pencil = false;
     picker = true;
     eraser = false;
+    highlighter = false;
     removeListeners();
     draw();
 })
@@ -199,6 +247,8 @@ eraserbtn.addEventListener("click", () => {
     pencil = false;
     picker = false;
     eraser = true;
+    highlighter = false;
+    removeListeners();
     draw();
 })
 
