@@ -18,7 +18,8 @@ function createCanvas(size) {
 }
 
 function draw() {
-    for (const pixel of pixels) {
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => {
         pixel.ondragstart = () => {
             return false;
             };
@@ -55,7 +56,7 @@ function draw() {
                 }
             });
         }
-    }
+    })
 }
 
 function removePixels() {
@@ -66,7 +67,11 @@ function removePixels() {
 }
 
 function removeListeners() {
-//TODO: Name anonymous functions in draw(), then remove them in here later.
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => {
+        let cleanPixel = pixel.cloneNode(true);
+        pixel.parentNode.replaceChild(cleanPixel, pixel);
+    })
 }
 
 function addGrid() {
@@ -122,7 +127,7 @@ let eraser = false;
 let grid = false;
 let picker = false;
 
-window.onload = createCanvas(size); draw(pixels);
+window.onload = createCanvas(size);
 
 window.onclick = (event) => {
     if (!event.target.matches(".sizebtn")) {
@@ -160,21 +165,22 @@ btns.forEach(btn => {
 pencilbtn.addEventListener("click", () => {
     pencil = true;
     eraser = false;
-    draw(pixels);
+    draw();
 })
 
 pickbtn.addEventListener("click", () => {
     pencil = false;
     picker = true;
     eraser = false;
-    draw(pixels);
+    removeListeners();
+    draw();
 })
 
 eraserbtn.addEventListener("click", () => {
     pencil = false;
     picker = false;
     eraser = true;
-    draw(pixels);
+    draw();
 })
 
 clearbtn.addEventListener("click", () => {
