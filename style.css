@@ -62,6 +62,10 @@ html, body {
     margin: 8px;
 }
 
+#fillbtn {
+    cursor: not-allowed;
+}
+
 .colors {
     display: flex;
     justify-content: center;
