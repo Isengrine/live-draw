@@ -40,7 +40,7 @@ function draw() {
         else if (picker) {
             pixel.addEventListener("click", (event) => {
                 let pickedColor = window.getComputedStyle(event.currentTarget).getPropertyValue("background-color");
-                console.log(pickedColor);
+                color.value = RGBtoHex(pickedColor);
             });
         }
 
@@ -79,6 +79,25 @@ function addGrid() {
     pixels.forEach(pixel => {
         pixel.classList.toggle("border");
     });
+}
+
+function RGBtoHex(rgb) {
+    let hex = "#";
+    let tmp = rgb.split("(")[1].split(")")[0];
+    tmp = tmp.split(",");
+
+    for (let i = 0; i < 3; i++) {
+        let value = parseInt(tmp[i].trim(), 10).toString(16);
+        if (value.length == 1) {
+            hex += "0" + value;
+          } 
+        
+        else {
+            hex += value;
+        }
+    }
+    
+    return hex;
 }
 
 function changeBG() {
@@ -127,7 +146,7 @@ let eraser = false;
 let grid = false;
 let picker = false;
 
-window.onload = createCanvas(size);
+window.onload = createCanvas(size), changeBG();
 
 window.onclick = (event) => {
     if (!event.target.matches(".sizebtn")) {
