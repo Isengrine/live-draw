@@ -209,7 +209,7 @@ btns.forEach(btn => {
                   }
                 });
 
-                if (!btn.id.includes("clearbtn") && !btn.id.includes("snapbtn")) {
+                if (!btn.id.includes("clearbtn") && !btn.id.includes("snapbtn") && !btn.id.includes("fillbtn")) {
                     btn.classList.add("active");
                 }
         }
