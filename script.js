@@ -172,7 +172,6 @@ let gridbtn = document.getElementById("gridbtn");
 let sizebtn = document.getElementById("sizebtn");
 
 let size = 16;
-let opacity = 0.1;
 
 let active = false;
 let pencil = false;
