@@ -216,7 +216,7 @@ btns.forEach(btn => {
 
         else {
             btns.forEach(btn => {
-                if (!btn.id.includes("gridbtn")) {
+                if (!btn.id.includes("gridbtn") && !btn.id.includes("alignbtn")) {
                     btn.classList.remove("active")
                   }
                 });
