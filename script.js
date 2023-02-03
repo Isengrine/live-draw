@@ -142,7 +142,7 @@ function changeBG() {
 
 function dropdown() {
     document.getElementById("dropdownID").classList.toggle("show");
-  }
+}
 
 function downloadImg() {
     html2canvas(document.getElementById("canvas")).then((canvas) => {
@@ -153,6 +153,17 @@ function downloadImg() {
     });
 }
 
+function align() {
+    if (isAligned) {
+        content.setAttribute("style", "justify-content: center;");
+    }
+
+    else {
+        content.removeAttribute("style", "justify-content: center;");
+    }
+}
+
+let content = document.getElementById("content");
 let canvas = document.getElementById("canvas");
 let pixels = [];
 let value = document.getElementById("value");
@@ -170,6 +181,7 @@ let eraserbtn = document.getElementById("eraserbtn");
 let clearbtn = document.getElementById("clearbtn");
 let gridbtn = document.getElementById("gridbtn");
 let sizebtn = document.getElementById("sizebtn");
+let alignbtn = document.getElementById("alignbtn");
 
 let size = 16;
 
@@ -179,6 +191,7 @@ let eraser = false;
 let grid = false;
 let picker = false;
 let highlighter = false;
+let isAligned = false;
 
 window.onload = createCanvas(size), changeBG();
 
@@ -265,6 +278,11 @@ gridbtn.addEventListener("click", () => {
 bgcolor.oninput = () => {
     changeBG();
 }
+
+alignbtn.addEventListener("click", () => {
+    isAligned = !isAligned;
+    align();
+})
 
 for (let sizeElement of sizeElements) {
     sizeElement.addEventListener("click", (event) => {

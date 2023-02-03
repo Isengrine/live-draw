@@ -133,7 +133,7 @@ button.active {
     cursor: pointer;
 }
 
-.snapshot {
+.extra-tools {
     margin: 8px;
     display: flex;
     justify-content: center;

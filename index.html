@@ -14,7 +14,7 @@
     <div class="header">
         <h1>Live Draw</h1>
     </div>
-    <div class="content">
+    <div id="content" class="content">
         <div class="menu">
             <div class="tools">
                 <button id="pencilbtn" class="toolbtn" title="Pencil"><img src="./images/pencil_ico.png"></button>
@@ -39,8 +39,9 @@
                 <input type="color" id="color" title="Ink Color" value="#333333">
                 <input type="color" id="bgcolor" title="Canvas Color" value="#ffffff">
             </div>
-            <div class="snapshot">
+            <div class="extra-tools">
                 <button onclick="downloadImg()" id="snapbtn" class="toolbtn" title="Snapshot"><img src="./images/snapshot_ico.png"></button>
+                <button id="alignbtn" class="toolbtn" title="Align"><img src="./images/align_ico.png"></button>
             </div>
         </div>
         <div id="easel">
