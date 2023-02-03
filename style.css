@@ -24,6 +24,11 @@ html, body {
     flex: 1;
 }
 
+#container {
+    display: flex;
+    flex: 1;
+}
+
 #easel {
     height: 512px;
     width: 512px;

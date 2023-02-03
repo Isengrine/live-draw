@@ -155,15 +155,15 @@ function downloadImg() {
 
 function align() {
     if (isAligned) {
-        content.setAttribute("style", "justify-content: center;");
+        container.setAttribute("style", "justify-content: center;");
     }
 
     else {
-        content.removeAttribute("style", "justify-content: center;");
+        container.removeAttribute("style", "justify-content: center;");
     }
 }
 
-let content = document.getElementById("content");
+let container = document.getElementById("container");
 let canvas = document.getElementById("canvas");
 let pixels = [];
 let value = document.getElementById("value");
